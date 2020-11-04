@@ -44,7 +44,7 @@ public final class Reports {
 									"         JOIN \"Organization\" O on \"Waybill\".organization_id = O.id\n" +
 									"group by waybill_id,\n" +
 									"         o.name\n" +
-									"having sum(price) > 150::money\n" +
+									"having sum(price) > "+higherThan+"::money\n" +
 									"order by sumP desc;\n")
 			) {
 				while (rs.next()){
